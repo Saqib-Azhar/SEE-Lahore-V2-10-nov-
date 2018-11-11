@@ -18,14 +18,12 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                @*<div class="row">
-                        <div class="col-md-12">
-                            <label for="BulkEmailName" class="pull-left">Name: </label><input type="text" value="" id="BulkEmailName" class="form-control" />
-                        </div>
-                    </div><br />*@
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <label for="BulkEmailTo" class="pull-left">Emails: </label> <textarea value="" id="BulkEmailTo" class="form-control" disabled></textarea>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="BulkSMSTo" class="pull-left">Phone Numbers: </label> <textarea value="" id="BulkSMSTo" class="form-control" disabled></textarea>
                     </div>
                 </div><br />
                 <div class="row">
@@ -187,7 +185,7 @@ Thankyou for your concerns.
             totalCount--;
             <tr>
                 <td>
-                    <input type="checkbox" id="Select_@item.Id" value="@item.Email" name="selectedItem" />
+                    <input type="checkbox" id="Select_@item.Id" alt="@item.ContactNo" value="@item.Email" name="selectedItem" />
                 </td>
                 <td>
                     @totalCount
@@ -294,13 +292,27 @@ Thankyou for your concerns.
         }
     }
 
-    function SendSMS(id)
-    {
-        alert("SMS service is not integrated yet.");
+    function SendSMS(id) {
+        $('#loading-indicator_' + id).show();
+        $(".emailFormButton").attr("disabled", true);
+        $.ajax({
+            url: "/SMS/SendSMS",
+            type: 'POST',
+            data: { SMSReceiverNumber: $('#EmailPhone_' + id).val(), Subject: $('#EmailSubject_' + id).val(), Message: $('#EmailBody_' + id).val() },
+            success: function (result) {
+                $('#loading-indicator_' + id).hide();
+                $(".emailFormButton").attr("disabled", false);
+                alert(result);
+            },
+            error: function () {
+                $('#loading-indicator_' + id).hide();
+                $(".emailFormButton").attr("disabled", false);
+                alert("error");
+            }
+        });
     }
 
-    function SendEmail(id)
-    {
+    function SendEmail(id) {
         $('#loading-indicator_' + id).show();
         $(".emailFormButton").attr("disabled", true);
         $.ajax({
@@ -320,18 +332,20 @@ Thankyou for your concerns.
         });
     }
 
-
     function BulkEmail() {
-        debugger;
         var emailsList = [];
         $.each($("input[name='selectedItem']:checked"), function () {
             emailsList.push($(this).val());
         });
         $("#BulkEmailTo").val(emailsList.join(", "));
+        var numbersList = [];
+        $.each($("input[name='selectedItem']:checked"), function () {
+            numbersList.push($(this).attr("alt"));
+        });
+        $("#BulkSMSTo").val(numbersList.join(", "));
     }
 
     function SendBulkEmail(dummyparam) {
-        debugger;
         var emailTo = $("#BulkEmailTo").val();
         var subject = $("#BulkEmailSubject").val();
         var body = $("#BulkEmailBody").val();
@@ -354,6 +368,33 @@ Thankyou for your concerns.
             }
         });
 
+    }
+
+
+
+    function SendBulkSMS()
+    {
+        var smsTo = $("#BulkSMSTo").val();
+        var subject = $("#BulkEmailSubject").val();
+        var body = $("#BulkEmailBody").val();
+
+        //$('#loading-indicator_' + id).show();
+        $(".emailFormButton").attr("disabled", true);
+        $.ajax({
+            url: "/SMS/SendBulkSMS",
+            type: 'POST',
+            data: { SMSReceiverNumbers: smsTo, Subject: subject, Message: body },
+            success: function (result) {
+                //$('#loading-indicator_' + id).hide();
+                $(".emailFormButton").attr("disabled", false);
+                alert(result);
+            },
+            error: function () {
+                //$('#loading-indicator_' + id).hide();
+                $(".emailFormButton").attr("disabled", false);
+                alert("error");
+            }
+        });
     }
 
 </script>

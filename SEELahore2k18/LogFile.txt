@@ -239,3 +239,17 @@
 
 
 
+12-Nov-18 2:05:09 AM | mscorlib | at System.IO.__Error.ReaderClosed()
+   at System.IO.StreamReader.ReadToEnd()
+   at SEELahore2k18.Controllers.SMSController.SendSMS(String SMSReceiverNumber, String Subject, String Message) | Cannot read from a closed TextReader.
+
+
+
+
+12-Nov-18 2:05:25 AM | Anonymously Hosted DynamicMethods Assembly | at CallSite.Target(Closure , CallSite , Object , Int32 )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   at SEELahore2k18.Controllers.SMSController.SendSMS(String SMSReceiverNumber, String Subject, String Message) | Index was outside the bounds of the array.
+
+
+
+

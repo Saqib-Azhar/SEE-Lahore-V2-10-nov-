@@ -238,6 +238,7 @@
     <Compile Include="Controllers\SeasonGalleriesController.cs" />
     <Compile Include="Controllers\SeasonsController.cs" />
     <Compile Include="Controllers\SEELahoreTeamsController.cs" />
+    <Compile Include="Controllers\SMSController.cs" />
     <Compile Include="Controllers\StallCategoriesController.cs" />
     <Compile Include="Controllers\StallRequestsController.cs" />
     <Compile Include="Controllers\TalentGalasController.cs" />
@@ -857,6 +858,7 @@
     <Folder Include="docs\" />
     <Folder Include="examples\" />
     <Folder Include="Views\Email\" />
+    <Folder Include="Views\SMS\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

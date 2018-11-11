@@ -141,3 +141,13 @@
 
 
 
+12-Nov-18 2:05:09 AM: Cannot read from a closed TextReader.
+
+
+
+
+12-Nov-18 2:05:25 AM: Index was outside the bounds of the array.
+
+
+
+
