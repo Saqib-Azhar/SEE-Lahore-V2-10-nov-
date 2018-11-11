@@ -1,0 +1,907 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AmbassadorCategories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category" Type="nvarchar(max)" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="CreatedAt" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Ambassadors">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="ContactNo" Type="nvarchar(max)" />
+    <Property Name="FacebookId" Type="nvarchar(max)" />
+    <Property Name="EmailId" Type="nvarchar(max)" />
+    <Property Name="CNIC" Type="nvarchar" MaxLength="13" />
+    <Property Name="InstituteId" Type="int" />
+    <Property Name="StatusId" Type="int" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="CityOfResidence" Type="nvarchar(max)" />
+    <Property Name="Degree" Type="nvarchar(max)" />
+    <Property Name="PreviousExperiance" Type="nvarchar(max)" />
+    <Property Name="AmbassadorCategoryId" Type="int" />
+    <Property Name="Hostelite" Type="bit" />
+    <Property Name="Why" Type="nvarchar(max)" />
+    <Property Name="ExpectationsFromSEE" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Announcement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="Announcement" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Competition">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompetitionName" Type="nvarchar(max)" />
+    <Property Name="CompetitionDescription" Type="nvarchar(max)" />
+    <Property Name="Image1" Type="nvarchar(max)" />
+    <Property Name="Image2" Type="nvarchar(max)" />
+    <Property Name="Image3" Type="nvarchar(max)" />
+    <Property Name="Image4" Type="nvarchar(max)" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="CompetitionCoordinator">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CoordinatorName" Type="nvarchar(max)" />
+    <Property Name="Photo" Type="nvarchar(max)" />
+    <Property Name="Contact" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="CompetitionId" Type="int" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="CompetitionRegistration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="ContactNo" Type="nvarchar(max)" />
+    <Property Name="EmailId" Type="nvarchar(max)" />
+    <Property Name="CNIC" Type="nvarchar" MaxLength="13" />
+    <Property Name="InstituteId" Type="int" />
+    <Property Name="RequestStatusId" Type="int" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="City" Type="nvarchar(max)" />
+    <Property Name="CompetitionId" Type="int" />
+  </EntityType>
+  <EntityType Name="ContactUs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="ContactNo" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="Subject" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="Opened" Type="bit" />
+  </EntityType>
+  <EntityType Name="EventDates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="date" />
+  </EntityType>
+  <EntityType Name="EventSegments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="From" Type="time" Precision="7" />
+    <Property Name="To" Type="time" Precision="7" />
+    <Property Name="SegmentName" Type="nvarchar(max)" />
+    <Property Name="SegmentDescription" Type="nvarchar(max)" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="EventDayId" Type="int" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="CreatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Guests">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="GuestName" Type="nvarchar(max)" />
+    <Property Name="GuestDescription" Type="nvarchar(max)" />
+    <Property Name="Image" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Institutes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Institute" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ProudPartners">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="PartnerName" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Logo" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="RegistrationDeadLines">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RegistrationType" Type="nvarchar(max)" />
+    <Property Name="From" Type="datetime" />
+    <Property Name="To" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RequestStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="SeasonGallery">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="SeasonId" Type="int" />
+  </EntityType>
+  <EntityType Name="Seasons">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="From" Type="date" />
+    <Property Name="To" Type="date" />
+  </EntityType>
+  <EntityType Name="SEELahoreTeam">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Designation" Type="nvarchar(max)" />
+    <Property Name="Photo" Type="nvarchar(max)" />
+    <Property Name="ContactNo" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="StallCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StallType" Type="nvarchar(max)" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="CreatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="StallRequest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StallName" Type="nvarchar(max)" />
+    <Property Name="StallDetails" Type="nvarchar(max)" />
+    <Property Name="Logo" Type="nvarchar(max)" />
+    <Property Name="RequestStatusId" Type="int" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="OwnerName" Type="nvarchar(max)" />
+    <Property Name="ContactNo" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="City" Type="nvarchar(max)" />
+    <Property Name="Profession" Type="nvarchar(max)" />
+    <Property Name="Institute" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TalentGala">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="InstituteId" Type="int" />
+    <Property Name="Degree" Type="nvarchar(max)" />
+    <Property Name="CGPA/Numbers" Type="nvarchar(max)" />
+    <Property Name="TotalNumbers" Type="nvarchar(max)" />
+    <Property Name="CNIC" Type="nvarchar" MaxLength="13" />
+    <Property Name="ContactNo." Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="CurrentSemester/Year" Type="int" />
+    <Property Name="RequestStatusId" Type="int" />
+  </EntityType>
+  <EntityType Name="VolunteerCategories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category" Type="nvarchar(max)" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="128" />
+    <Property Name="CreatedAt" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Volunteers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="ContactNo" Type="nvarchar(max)" />
+    <Property Name="FacebookId" Type="nvarchar(max)" />
+    <Property Name="EmailId" Type="nvarchar(max)" />
+    <Property Name="CNIC" Type="nvarchar" MaxLength="13" />
+    <Property Name="InstituteId" Type="int" />
+    <Property Name="StatusId" Type="int" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="CityOfResidence" Type="nvarchar(max)" />
+    <Property Name="Degree" Type="nvarchar(max)" />
+    <Property Name="PreviousExperiance" Type="nvarchar(max)" />
+    <Property Name="VolunteerCategoryId" Type="int" />
+    <Property Name="Hostelite" Type="bit" />
+    <Property Name="Why" Type="nvarchar(max)" />
+    <Property Name="ExpectationsFromSEE" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_AmbassadorCategories_ToAspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+    <End Role="AmbassadorCategories" Type="Self.AmbassadorCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AmbassadorCategories">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ambassadors_Institutes">
+    <End Role="Institutes" Type="Self.Institutes" Multiplicity="0..1" />
+    <End Role="Ambassadors" Type="Self.Ambassadors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institutes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ambassadors">
+        <PropertyRef Name="InstituteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ambassadors_RequestStatus">
+    <End Role="RequestStatus" Type="Self.RequestStatus" Multiplicity="0..1" />
+    <End Role="Ambassadors" Type="Self.Ambassadors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RequestStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ambassadors">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ambassadors_ToAmbassadorCategories">
+    <End Role="AmbassadorCategories" Type="Self.AmbassadorCategories" Multiplicity="0..1" />
+    <End Role="Ambassadors" Type="Self.Ambassadors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AmbassadorCategories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ambassadors">
+        <PropertyRef Name="AmbassadorCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Announcement_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+    <End Role="Announcement" Type="Self.Announcement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Announcement">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Competition_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+    <End Role="Competition" Type="Self.Competition" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Competition">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompetitionCoordinator_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+    <End Role="CompetitionCoordinator" Type="Self.CompetitionCoordinator" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompetitionCoordinator">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompetitionCoordinator_Competition">
+    <End Role="Competition" Type="Self.Competition" Multiplicity="0..1" />
+    <End Role="CompetitionCoordinator" Type="Self.CompetitionCoordinator" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Competition">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompetitionCoordinator">
+        <PropertyRef Name="CompetitionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompetitionRegistration_Competition">
+    <End Role="Competition" Type="Self.Competition" Multiplicity="0..1" />
+    <End Role="CompetitionRegistration" Type="Self.CompetitionRegistration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Competition">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompetitionRegistration">
+        <PropertyRef Name="CompetitionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompetitionRegistration_Institutes">
+    <End Role="Institutes" Type="Self.Institutes" Multiplicity="0..1" />
+    <End Role="CompetitionRegistration" Type="Self.CompetitionRegistration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institutes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompetitionRegistration">
+        <PropertyRef Name="InstituteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CompetitionRegistration_RequestStatus">
+    <End Role="RequestStatus" Type="Self.RequestStatus" Multiplicity="0..1" />
+    <End Role="CompetitionRegistration" Type="Self.CompetitionRegistration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RequestStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CompetitionRegistration">
+        <PropertyRef Name="RequestStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EventSegments_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+    <End Role="EventSegments" Type="Self.EventSegments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EventSegments">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EventSegments_EventDates">
+    <End Role="EventDates" Type="Self.EventDates" Multiplicity="0..1" />
+    <End Role="EventSegments" Type="Self.EventSegments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EventDates">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EventSegments">
+        <PropertyRef Name="EventDayId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Guests_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+    <End Role="Guests" Type="Self.Guests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Guests">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProudPartners_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+    <End Role="ProudPartners" Type="Self.ProudPartners" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProudPartners">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SeasonGallery_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+    <End Role="SeasonGallery" Type="Self.SeasonGallery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SeasonGallery">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SeasonGallery_Seasons">
+    <End Role="Seasons" Type="Self.Seasons" Multiplicity="0..1" />
+    <End Role="SeasonGallery" Type="Self.SeasonGallery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Seasons">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SeasonGallery">
+        <PropertyRef Name="SeasonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Seasons_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+    <End Role="Seasons" Type="Self.Seasons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Seasons">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SEELahoreTeam_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+    <End Role="SEELahoreTeam" Type="Self.SEELahoreTeam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SEELahoreTeam">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StallRequest_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+    <End Role="StallRequest" Type="Self.StallRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StallRequest">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StallRequest_RequestStatus">
+    <End Role="RequestStatus" Type="Self.RequestStatus" Multiplicity="0..1" />
+    <End Role="StallRequest" Type="Self.StallRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RequestStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StallRequest">
+        <PropertyRef Name="RequestStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StallRequest_StallCategory">
+    <End Role="StallCategory" Type="Self.StallCategory" Multiplicity="0..1" />
+    <End Role="StallRequest" Type="Self.StallRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StallCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StallRequest">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StallType_AspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+    <End Role="StallCategory" Type="Self.StallCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StallCategory">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TalentGala_ToInstitutes">
+    <End Role="Institutes" Type="Self.Institutes" Multiplicity="0..1" />
+    <End Role="TalentGala" Type="Self.TalentGala" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institutes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TalentGala">
+        <PropertyRef Name="InstituteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TalentGala_ToRequestStatus">
+    <End Role="RequestStatus" Type="Self.RequestStatus" Multiplicity="0..1" />
+    <End Role="TalentGala" Type="Self.TalentGala" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RequestStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TalentGala">
+        <PropertyRef Name="RequestStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VolunteerCategories_ToAspNetUsers">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+    <End Role="VolunteerCategories" Type="Self.VolunteerCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VolunteerCategories">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Volunteers_Institutes">
+    <End Role="Institutes" Type="Self.Institutes" Multiplicity="0..1" />
+    <End Role="Volunteers" Type="Self.Volunteers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Institutes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Volunteers">
+        <PropertyRef Name="InstituteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Volunteers_RequestStatus">
+    <End Role="RequestStatus" Type="Self.RequestStatus" Multiplicity="0..1" />
+    <End Role="Volunteers" Type="Self.Volunteers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RequestStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Volunteers">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Volunteers_ToVolunteerCategories">
+    <End Role="VolunteerCategories" Type="Self.VolunteerCategories" Multiplicity="0..1" />
+    <End Role="Volunteers" Type="Self.Volunteers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VolunteerCategories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Volunteers">
+        <PropertyRef Name="VolunteerCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AmbassadorCategories" EntityType="Self.AmbassadorCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ambassadors" EntityType="Self.Ambassadors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Announcement" EntityType="Self.Announcement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Competition" EntityType="Self.Competition" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompetitionCoordinator" EntityType="Self.CompetitionCoordinator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompetitionRegistration" EntityType="Self.CompetitionRegistration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContactUs" EntityType="Self.ContactUs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EventDates" EntityType="Self.EventDates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EventSegments" EntityType="Self.EventSegments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Guests" EntityType="Self.Guests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Institutes" EntityType="Self.Institutes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProudPartners" EntityType="Self.ProudPartners" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RegistrationDeadLines" EntityType="Self.RegistrationDeadLines" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RequestStatus" EntityType="Self.RequestStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SeasonGallery" EntityType="Self.SeasonGallery" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Seasons" EntityType="Self.Seasons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SEELahoreTeam" EntityType="Self.SEELahoreTeam" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StallCategory" EntityType="Self.StallCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StallRequest" EntityType="Self.StallRequest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TalentGala" EntityType="Self.TalentGala" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VolunteerCategories" EntityType="Self.VolunteerCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Volunteers" EntityType="Self.Volunteers" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AmbassadorCategories_ToAspNetUsers" Association="Self.FK_AmbassadorCategories_ToAspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AmbassadorCategories" EntitySet="AmbassadorCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ambassadors_Institutes" Association="Self.FK_Ambassadors_Institutes">
+      <End Role="Institutes" EntitySet="Institutes" />
+      <End Role="Ambassadors" EntitySet="Ambassadors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ambassadors_RequestStatus" Association="Self.FK_Ambassadors_RequestStatus">
+      <End Role="RequestStatus" EntitySet="RequestStatus" />
+      <End Role="Ambassadors" EntitySet="Ambassadors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ambassadors_ToAmbassadorCategories" Association="Self.FK_Ambassadors_ToAmbassadorCategories">
+      <End Role="AmbassadorCategories" EntitySet="AmbassadorCategories" />
+      <End Role="Ambassadors" EntitySet="Ambassadors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Announcement_AspNetUsers" Association="Self.FK_Announcement_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="Announcement" EntitySet="Announcement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Competition_AspNetUsers" Association="Self.FK_Competition_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="Competition" EntitySet="Competition" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompetitionCoordinator_AspNetUsers" Association="Self.FK_CompetitionCoordinator_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="CompetitionCoordinator" EntitySet="CompetitionCoordinator" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompetitionCoordinator_Competition" Association="Self.FK_CompetitionCoordinator_Competition">
+      <End Role="Competition" EntitySet="Competition" />
+      <End Role="CompetitionCoordinator" EntitySet="CompetitionCoordinator" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompetitionRegistration_Competition" Association="Self.FK_CompetitionRegistration_Competition">
+      <End Role="Competition" EntitySet="Competition" />
+      <End Role="CompetitionRegistration" EntitySet="CompetitionRegistration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompetitionRegistration_Institutes" Association="Self.FK_CompetitionRegistration_Institutes">
+      <End Role="Institutes" EntitySet="Institutes" />
+      <End Role="CompetitionRegistration" EntitySet="CompetitionRegistration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CompetitionRegistration_RequestStatus" Association="Self.FK_CompetitionRegistration_RequestStatus">
+      <End Role="RequestStatus" EntitySet="RequestStatus" />
+      <End Role="CompetitionRegistration" EntitySet="CompetitionRegistration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EventSegments_AspNetUsers" Association="Self.FK_EventSegments_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="EventSegments" EntitySet="EventSegments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EventSegments_EventDates" Association="Self.FK_EventSegments_EventDates">
+      <End Role="EventDates" EntitySet="EventDates" />
+      <End Role="EventSegments" EntitySet="EventSegments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Guests_AspNetUsers" Association="Self.FK_Guests_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="Guests" EntitySet="Guests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProudPartners_AspNetUsers" Association="Self.FK_ProudPartners_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="ProudPartners" EntitySet="ProudPartners" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SeasonGallery_AspNetUsers" Association="Self.FK_SeasonGallery_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="SeasonGallery" EntitySet="SeasonGallery" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SeasonGallery_Seasons" Association="Self.FK_SeasonGallery_Seasons">
+      <End Role="Seasons" EntitySet="Seasons" />
+      <End Role="SeasonGallery" EntitySet="SeasonGallery" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Seasons_AspNetUsers" Association="Self.FK_Seasons_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="Seasons" EntitySet="Seasons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SEELahoreTeam_AspNetUsers" Association="Self.FK_SEELahoreTeam_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="SEELahoreTeam" EntitySet="SEELahoreTeam" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StallRequest_AspNetUsers" Association="Self.FK_StallRequest_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="StallRequest" EntitySet="StallRequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StallRequest_RequestStatus" Association="Self.FK_StallRequest_RequestStatus">
+      <End Role="RequestStatus" EntitySet="RequestStatus" />
+      <End Role="StallRequest" EntitySet="StallRequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StallRequest_StallCategory" Association="Self.FK_StallRequest_StallCategory">
+      <End Role="StallCategory" EntitySet="StallCategory" />
+      <End Role="StallRequest" EntitySet="StallRequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StallType_AspNetUsers" Association="Self.FK_StallType_AspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="StallCategory" EntitySet="StallCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TalentGala_ToInstitutes" Association="Self.FK_TalentGala_ToInstitutes">
+      <End Role="Institutes" EntitySet="Institutes" />
+      <End Role="TalentGala" EntitySet="TalentGala" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TalentGala_ToRequestStatus" Association="Self.FK_TalentGala_ToRequestStatus">
+      <End Role="RequestStatus" EntitySet="RequestStatus" />
+      <End Role="TalentGala" EntitySet="TalentGala" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VolunteerCategories_ToAspNetUsers" Association="Self.FK_VolunteerCategories_ToAspNetUsers">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="VolunteerCategories" EntitySet="VolunteerCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Volunteers_Institutes" Association="Self.FK_Volunteers_Institutes">
+      <End Role="Institutes" EntitySet="Institutes" />
+      <End Role="Volunteers" EntitySet="Volunteers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Volunteers_RequestStatus" Association="Self.FK_Volunteers_RequestStatus">
+      <End Role="RequestStatus" EntitySet="RequestStatus" />
+      <End Role="Volunteers" EntitySet="Volunteers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Volunteers_ToVolunteerCategories" Association="Self.FK_Volunteers_ToVolunteerCategories">
+      <End Role="VolunteerCategories" EntitySet="VolunteerCategories" />
+      <End Role="Volunteers" EntitySet="Volunteers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

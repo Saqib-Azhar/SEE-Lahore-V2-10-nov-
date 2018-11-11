@@ -1,0 +1,152 @@
+﻿
+@{
+    ViewBag.Title = "AdminPanel";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header card-header-warning card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">perm_contact_calendar</i>
+
+                </div>
+                <a href="/Volunteers/Index" class="card-category">Volunteer Requests</a>
+                <a href="/Volunteers/Index?type=1" class="card-title">Pending Requests</a>
+                <a href="/Volunteers/Index?type=2" class="card-title">Rejected Requests</a>
+                <a href="/Volunteers/Index?type=3" class="card-title">Approved Requests</a>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <a href="/Volunteers/Index">All Requests</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header card-header-success card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">account_box</i>
+
+                </div>
+                <p class="card-category">Ambassador Requests</p>
+                <a href="/Ambassadors/Index?type=1" class="card-title">Pending Requests</a>
+                <a href="/Ambassadors/Index?type=2" class="card-title">Rejected Requests</a>
+                <a href="/Ambassadors/Index?type=3" class="card-title">Approved Requests</a>
+            </div>
+            <div class="card-footer">
+                <div class="stats"><a href="/Ambassadors/Index">All Requests</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header card-header-danger card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">library_books</i>
+                </div>
+                <p class="card-category">Competitions </p>
+                <a href="/CompetitionRegistrations/Index?type=1" class="card-title">Pending Requests</a>
+                <a href="/CompetitionRegistrations/Index?type=2" class="card-title">Rejected Requests</a>
+                <a href="/CompetitionRegistrations/Index?type=3" class="card-title">Approved Requests</a>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <a href="/CompetitionRegistrations/Index">All Requests</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header card-header-info card-header-icon">
+                <div class="card-icon"><i class="material-icons">playlist_add</i>
+
+                </div>
+                <p class="card-category">Stalls Registrations</p>
+                <a href="/StallRequests/Index?type=1" class="card-title">Pending Requests</a>
+                <a href="/StallRequests/Index?type=2" class="card-title">Rejected Requests</a>
+                <a href="/StallRequests/Index?type=3" class="card-title">Approved Requests</a>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <a href="/StallRequests/Index">All Requests</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header card-header-warning card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">content_copy</i>
+                </div>
+                <p class="card-category">Used Space</p>
+                <h3 class="card-title">
+                    49/50
+                    <small>GB</small>
+                </h3>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <i class="material-icons text-danger">warning</i>
+                    <a href="#pablo">Get More Space...</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header card-header-success card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">store</i>
+                </div>
+                <p class="card-category">Revenue</p>
+                <h3 class="card-title">$34,245</h3>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <i class="material-icons">date_range</i> Last 24 Hours
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header card-header-danger card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">info_outline</i>
+                </div>
+                <p class="card-category">Fixed Issues</p>
+                <h3 class="card-title">75</h3>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <i class="material-icons">local_offer</i> Tracked from Github
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <div class="card-header card-header-info card-header-icon">
+                <div class="card-icon">
+                    <i class="fa fa-twitter"></i>
+                </div>
+                <p class="card-category">Followers</p>
+                <h3 class="card-title">+245</h3>
+            </div>
+            <div class="card-footer">
+                <div class="stats">
+                    <i class="material-icons">update</i> Just Updated
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@

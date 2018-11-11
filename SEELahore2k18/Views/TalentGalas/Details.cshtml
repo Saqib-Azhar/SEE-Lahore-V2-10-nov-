@@ -1,0 +1,109 @@
+﻿@model SEELahore2k18.Models.TalentGala
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div style="border:double">
+    <h4 style="padding:20px">Talent Gala</h4>
+    <hr />
+    <div class="row" style="padding:20px">
+        <div class="col-md-6"><dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd></div>
+
+        <div class="col-md-6"><dt>
+            @Html.DisplayNameFor(model => model.Institute.Institute1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Institute)
+        </dd></div>
+
+        <div class="col-md-6"><dt>
+            @Html.DisplayNameFor(model => model.Degree)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Degree)
+        </dd></div>
+
+        <div class="col-md-6"><dt>
+            @Html.DisplayNameFor(model => model.CGPA_Numbers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CGPA_Numbers)
+        </dd></div>
+
+        <div class="col-md-6"><dt>
+            @Html.DisplayNameFor(model => model.TotalNumbers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalNumbers)
+        </dd></div>
+
+        <div class="col-md-6"><dt>
+            @Html.DisplayNameFor(model => model.CNIC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CNIC)
+        </dd></div>
+
+        <div class="col-md-6"><dt>
+            @Html.DisplayNameFor(model => model.ContactNo_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNo_)
+        </dd></div>
+
+        <div class="col-md-6"><dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd></div>
+
+        <div class="col-md-6"><dt>
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedAt)
+        </dd></div>
+
+        <div class="col-md-6"><dt>
+            @Html.DisplayNameFor(model => model.CurrentSemester_Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrentSemester_Year)
+        </dd></div>
+
+        <div class="col-md-6"><dt>
+            @Html.DisplayNameFor(model => model.RequestStatu.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequestStatu.Status)
+        </dd></div>
+
+    </div>
+</div>
+<p style="text-align:center">
+    @Html.ActionLink("Back to List", "Index", new { id = Model.Id }, htmlAttributes: new { @class = "btn btn-sm btn-info" })
+    @*@Html.ActionLink("Approve", "UpdateStatus", new { id = Model.Id, status = 2 }, htmlAttributes: new { @class = "btn btn-sm btn-primary" })
+    @Html.ActionLink("Decline", "UpdateStatus", new { id = Model.Id, status = 3 }, htmlAttributes: new { @class = "btn btn-sm btn-danger" })*@
+
+    <a href="/TalentGalas/UpdateStatus?id=@Model.Id&status=2" class="btn btn-sm btn-primary">Approve</a>
+    <a href="/TalentGalas/UpdateStatus?id=@Model.Id&status=3" class="btn btn-sm btn-danger">Decline</a>
+</p>

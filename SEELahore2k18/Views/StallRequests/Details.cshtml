@@ -1,0 +1,134 @@
+﻿@model SEELahore2k18.Models.StallRequest
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<div  style="border:double">
+    <h4 style="padding:10px">StallRequest</h4>
+    <hr />
+    <div class="row" style="padding:20px">
+        <div class="col-md-6"><dt>
+            @Html.DisplayNameFor(model => model.StallName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StallName)
+        </dd></div>
+
+        <div class="col-md-6"><dt>
+            @Html.DisplayNameFor(model => model.StallDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StallDetails)
+        </dd></div>
+
+        <div class="col-md-6"><dt>
+            @Html.DisplayNameFor(model => model.Logo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Logo)
+        </dd></div>
+
+        <div class="col-md-6"><dt>
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedAt)
+        </dd></div>
+
+        <div class="col-md-6"><dt>
+            @Html.DisplayNameFor(model => model.OwnerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OwnerName)
+        </dd></div>
+
+        <div class="col-md-6"><dt>
+            @Html.DisplayNameFor(model => model.ContactNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNo)
+        </dd></div>
+
+        <div class="col-md-6"><dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd></div>
+
+        <div class="col-md-6"><dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd></div>
+
+        <div class="col-md-6"><dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd></div>
+
+        @*<div class="col-md-6"><dt>
+            @Html.DisplayNameFor(model => model.Profession)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profession)
+        </dd></div>
+
+        <div class="col-md-6"><dt>
+            @Html.DisplayNameFor(model => model.Institute.Institute1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Institute)
+        </dd></div>*@
+
+        <div class="col-md-6"><dt>
+            @Html.DisplayNameFor(model => model.AspNetUser.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AspNetUser.Email)
+        </dd></div>
+
+        <div class="col-md-6"><dt>
+            @Html.DisplayNameFor(model => model.RequestStatu.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequestStatu.Status)
+        </dd></div>
+
+        <div class="col-md-6"><dt>
+            @Html.DisplayNameFor(model => model.StallCategory.StallType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StallCategory.StallType)
+        </dd></div>
+
+    </div>
+</div>
+    <p style="text-align:center">
+        @Html.ActionLink("Back to List", "Index", new { id = Model.Id }, htmlAttributes: new { @class = "btn btn-sm btn-info" })
+        @*@Html.ActionLink("Approve", "UpdateStatus", new { id = Model.Id, status = 2 }, htmlAttributes: new { @class = "btn btn-sm btn-primary" })
+        @Html.ActionLink("Decline", "UpdateStatus", new { id = Model.Id, status = 3 }, htmlAttributes: new { @class = "btn btn-sm btn-danger" })*@
+
+        <a href="/StallRequests/UpdateStatus?id=@Model.Id&status=2" class="btn btn-sm btn-primary">Approve</a>
+        <a href="/StallRequests/UpdateStatus?id=@Model.Id&status=3" class="btn btn-sm btn-danger">Decline</a>
+    </p>

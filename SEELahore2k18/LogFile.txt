@@ -1,0 +1,241 @@
+31-Oct-18 12:13:19 AM mscorlib Non-static field requires a target.
+
+
+04-Nov-18 4:05:59 AM | System | at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 63 | The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+
+
+04-Nov-18 4:08:20 AM | System | at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) | The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+
+
+04-Nov-18 4:11:54 AM | System | at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) | The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+
+
+04-Nov-18 4:31:59 AM | System | at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) | The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+
+
+04-Nov-18 4:32:19 AM | System | at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) | The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+
+
+04-Nov-18 4:32:34 AM | System | at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) | The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+
+
+04-Nov-18 4:33:13 AM | System | at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) | The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+
+
+04-Nov-18 4:33:14 AM | System | at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) | The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+
+
+04-Nov-18 4:34:46 AM | System | at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) | The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+
+
+04-Nov-18 4:41:00 AM | System | at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 62 | The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+
+
+04-Nov-18 4:42:09 AM | System | at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 62 | The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+
+
+04-Nov-18 5:32:48 AM | System | at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   at System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 62 | Mailbox unavailable. The server response was: Access denied - Invalid HELO name (See RFC2821 4.1.1.1)
+
+
+04-Nov-18 5:37:46 PM | System | at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 52 | Failure sending mail.
+
+
+
+
+04-Nov-18 5:37:56 PM | System | at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 52 | Failure sending mail.
+
+
+
+
+04-Nov-18 5:51:42 PM | System | at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 52 | Failure sending mail.
+
+
+
+
+04-Nov-18 5:56:20 PM | System | at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 52 | Failure sending mail.
+
+
+
+
+04-Nov-18 5:57:12 PM | System | at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 52 | Failure sending mail.
+
+
+
+
+04-Nov-18 5:57:16 PM | System | at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 52 | Failure sending mail.
+
+
+
+
+04-Nov-18 5:57:51 PM | System | at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 52 | Failure sending mail.
+
+
+
+
+04-Nov-18 5:59:17 PM | System | at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 52 | Failure sending mail.
+
+
+
+
+04-Nov-18 6:03:53 PM | System | at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 52 | Failure sending mail.
+
+
+
+
+04-Nov-18 6:04:11 PM | System | at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 52 | Failure sending mail.
+
+
+
+
+04-Nov-18 6:04:12 PM | System | at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 52 | Failure sending mail.
+
+
+
+
+04-Nov-18 6:04:12 PM | System | at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 52 | Failure sending mail.
+
+
+
+
+04-Nov-18 6:04:36 PM | System | at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 52 | Failure sending mail.
+
+
+
+
+04-Nov-18 6:06:56 PM | System | at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 52 | Failure sending mail.
+
+
+
+
+04-Nov-18 6:07:07 PM | System | at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 52 | Failure sending mail.
+
+
+
+
+04-Nov-18 6:09:31 PM | System | at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 52 | Failure sending mail.
+
+
+
+
+04-Nov-18 6:11:17 PM | System | at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 52 | Failure sending mail.
+
+
+
+
+04-Nov-18 6:12:00 PM | System | at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 52 | Failure sending mail.
+
+
+
+
+04-Nov-18 6:13:04 PM | System | at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 52 | Failure sending mail.
+
+
+
+
+04-Nov-18 6:16:13 PM | System | at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 52 | Failure sending mail.
+
+
+
+
+04-Nov-18 6:17:24 PM | System | at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 52 | Failure sending mail.
+
+
+
+
+04-Nov-18 6:26:11 PM | System | at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 52 | Failure sending mail.
+
+
+
+
+04-Nov-18 6:27:34 PM | System | at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 52 | Failure sending mail.
+
+
+
+
+04-Nov-18 6:28:02 PM | System | at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEELahore2k18\SEELahore2k18\SEELahore2k18\Controllers\EmailController.cs:line 52 | Failure sending mail.
+
+
+
+
+10-Nov-18 5:42:05 PM | SEELahore2k18 | at SEELahore2k18.Controllers.EmailController.SendBulkEmail(String EmailSubject, String EmailBody, String EmailTo) in C:\Users\sazhar\Desktop\SEELahore2k18V2\SEELahore2k18\Controllers\EmailController.cs:line 76 | Object reference not set to an instance of an object.
+
+
+
+
+10-Nov-18 5:44:33 PM | SEELahore2k18 | at SEELahore2k18.Controllers.EmailController.SendBulkEmail(String EmailSubject, String EmailBody, String EmailTo) in C:\Users\sazhar\Desktop\SEELahore2k18V2\SEELahore2k18\Controllers\EmailController.cs:line 76 | Object reference not set to an instance of an object.
+
+
+
+

@@ -1,0 +1,143 @@
+31-Oct-18 12:13:19 AM: Non-static field requires a target.
+04-Nov-18 4:05:59 AM: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+04-Nov-18 4:08:20 AM: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+04-Nov-18 4:11:54 AM: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+04-Nov-18 4:31:59 AM: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+04-Nov-18 4:32:19 AM: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+04-Nov-18 4:32:34 AM: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+04-Nov-18 4:33:13 AM: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+04-Nov-18 4:33:14 AM: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+04-Nov-18 4:34:46 AM: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+04-Nov-18 4:41:00 AM: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+04-Nov-18 4:42:09 AM: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.5.1 Authentication Required. Learn more at
+04-Nov-18 5:32:48 AM: Mailbox unavailable. The server response was: Access denied - Invalid HELO name (See RFC2821 4.1.1.1)
+04-Nov-18 5:37:46 PM: Failure sending mail.
+
+
+
+
+04-Nov-18 5:37:56 PM: Failure sending mail.
+
+
+
+
+04-Nov-18 5:51:42 PM: Failure sending mail.
+
+
+
+
+04-Nov-18 5:56:20 PM: Failure sending mail.
+
+
+
+
+04-Nov-18 5:57:12 PM: Failure sending mail.
+
+
+
+
+04-Nov-18 5:57:16 PM: Failure sending mail.
+
+
+
+
+04-Nov-18 5:57:51 PM: Failure sending mail.
+
+
+
+
+04-Nov-18 5:59:17 PM: Failure sending mail.
+
+
+
+
+04-Nov-18 6:03:53 PM: Failure sending mail.
+
+
+
+
+04-Nov-18 6:04:11 PM: Failure sending mail.
+
+
+
+
+04-Nov-18 6:04:12 PM: Failure sending mail.
+
+
+
+
+04-Nov-18 6:04:12 PM: Failure sending mail.
+
+
+
+
+04-Nov-18 6:04:36 PM: Failure sending mail.
+
+
+
+
+04-Nov-18 6:06:56 PM: Failure sending mail.
+
+
+
+
+04-Nov-18 6:07:07 PM: Failure sending mail.
+
+
+
+
+04-Nov-18 6:09:31 PM: Failure sending mail.
+
+
+
+
+04-Nov-18 6:11:17 PM: Failure sending mail.
+
+
+
+
+04-Nov-18 6:12:00 PM: Failure sending mail.
+
+
+
+
+04-Nov-18 6:13:04 PM: Failure sending mail.
+
+
+
+
+04-Nov-18 6:16:13 PM: Failure sending mail.
+
+
+
+
+04-Nov-18 6:17:24 PM: Failure sending mail.
+
+
+
+
+04-Nov-18 6:26:11 PM: Failure sending mail.
+
+
+
+
+04-Nov-18 6:27:34 PM: Failure sending mail.
+
+
+
+
+04-Nov-18 6:28:02 PM: Failure sending mail.
+
+
+
+
+10-Nov-18 5:42:05 PM: Object reference not set to an instance of an object.
+
+
+
+
+10-Nov-18 5:44:33 PM: Object reference not set to an instance of an object.
+
+
+
+

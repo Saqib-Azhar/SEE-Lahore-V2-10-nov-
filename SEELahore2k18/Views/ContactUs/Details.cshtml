@@ -1,0 +1,30 @@
+﻿@model SEELahore2k18.Models.ContactU
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+   
+    <div class="row">
+        <div class="col-md-6"><b>Name: </b>@Html.DisplayFor(model => model.Name)</div>
+        <div class="col-md-6"><b>Submitted At: </b>@Html.DisplayFor(model => model.CreatedAt)</div>
+    </div>
+    <div class="row">
+        <div class="col-md-6"><b>Contact No: </b>@Html.DisplayFor(model => model.ContactNo)</div>
+        <div class="col-md-6"><b>Email Id: </b>@Html.DisplayFor(model => model.Email)</div>
+    </div><hr />
+    <div class="row">
+        <div class="col-md-12"><b>Subject: @Html.DisplayFor(model => model.Subject)</b></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12"><textarea class="form-control" style="border:solid;padding:10px"disabled>@Html.DisplayFor(model => model.Description)</textarea></div>
+    </div>
+
+
+</div>
+<p>
+    <a href="/ContactUs/Index" class="btn btn-primary">Back to List</a>
+</p>

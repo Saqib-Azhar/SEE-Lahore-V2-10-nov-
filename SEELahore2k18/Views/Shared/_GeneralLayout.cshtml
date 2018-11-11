@@ -1,0 +1,224 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/FrontEndDesign/images/logo/see_logo.png">
+    <link rel="shortcut icon" type="image/png" href="/FrontEndDesign/images/logo/see_logo.png">
+    <title>SEE Lahore</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/FrontEndDesign/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="/FrontEndDesign/css/style.css">
+    <!-- Responsive stylesheet  -->
+    <link rel="stylesheet" type="text/css" href="/FrontEndDesign/css/responsive.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="/FrontEndDesign/https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="/FrontEndDesign/https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .dropbtn {
+            background-color: none;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: none;
+                }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: none;
+        }
+    </style>
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status"></div>
+    </div>
+    <!-- Banner Start -->
+    <header class="main-header">
+        <!-- Navigation Start -->
+        <div class="main-nav nav-transparent">
+            <nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+                <div class="container">
+                    <div class="navbar-header page-scroll">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand page-scroll" href="/Home/Index"><img class="main-logo" src="/FrontEndDesign/images/logo/see_logo.png" style="height:55px;width:75px;margin-top:0px" alt=""> </a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-ex1-collapse" style="margin-left:15px!important">
+                        <ul class="nav navbar-nav navbar-right" @*style="margin-left:-90px!important"*@>
+                            <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                            <li> <a class="page-scroll" style="color:black" href="/Home/Index">Home</a> </li>
+                            <li class="dropdown">
+                                <a class="dropbtn" style="color:black" >Explore</a>
+                                <div class="dropdown-content">
+                                    <a class="page-scroll" href="/Home/Index/#about">About</a> 
+                                    <a class="page-scroll" href="/Home/Index/#speakers">Guests</a>
+                                    <a class="page-scroll" href="/Home/Index/#schedules">Schedules</a>
+                                    <a class="page-scroll" href="/Home/Index/#venue">Venue</a>
+                                    <a class="page-scroll" href="/Home/Index/#blog">Team SEE Lahore</a>
+                                    <a class="page-scroll" href="/Home/Index/#sponsors">Sponsors</a>
+                                    <a class="page-scroll" href="/Home/Index/#about">SEE Lahore Seasons</a>
+                                </div>
+
+                            </li>
+                            <li> <a class="page-scroll" style="color:black" href="/Volunteers/Create">Volunteer</a> </li>
+                            <li> <a class="page-scroll" style="color:black" href="/Ambassadors/Create">Ambassador</a> </li>
+                            <li> <a class="page-scroll" style="color:black" href="/TalentGalas/Create">Talent gala</a> </li>
+                            <li> <a class="page-scroll" style="color:black" href="/CompetitionRegistrations/Create">Competitions</a> </li>
+                            <li> <a class="page-scroll" style="color:black" href="/StallRequests/Create">Book a Stall</a></li>
+                            <li> <a class="page-scroll" style="color:black" href="/Home/Index#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container -->
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Start -->
+    <section class="about-area" id="about">
+        <img class="left-img" src="/FrontEndDesign/images/left-img.png" alt="">
+        <img class="right-img" src="/FrontEndDesign/images/right-img.png" alt="">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </section>
+    <!-- Speakers Start -->
+
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-center">
+                    <div class="col-md-6 col-sm-8">
+                        <div class="newsletter-col">
+                            <h4>Join our mailing list and never miss an update!</h4>
+                            <form>
+                                <div class="input-group">
+                                    <input placeholder="Email Address" class="form-control" name="search-field" type="text">
+                                    <span class="input-group-btn">
+                                        <button type="submit" class="btn">Subscribe</button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="footer-col hi-icon-wrap hi-icon-effect-4 hi-icon-effect-4b">
+                        <a href="#set-4" class="hi-icon">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="#set-4" class="hi-icon">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="#set-4" class="hi-icon">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                        <a href="#set-4" class="hi-icon">
+                            <i class="fa fa-dribbble" aria-hidden="true"></i>
+                        </a>
+                        <a href="#set-4" class="hi-icon">
+                            <i class="fa fa-google-plus" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <section class="footer-copy-right text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>©2018. Developed by <a href="http://teqways.com" target="_blank">Teqways.</a> All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Style Background ten End -->
+    <!-- jQuery -->
+    <script src="/FrontEndDesign/js/jquery.min.js"></script>
+    <!-- Bootstrap Min js -->
+    <script src="/FrontEndDesign/js/bootstrap.min.js"></script>
+    <!-- scrolling-nav JS -->
+    <script src="/FrontEndDesign/js/scrolling-nav.js"></script>
+    <!-- jquery easing JS -->
+    <script src="/FrontEndDesign/js/jquery.easing.min.js"></script>
+    <!-- counterup -->
+    <script src="/FrontEndDesign/js/jquery.counterup.min.js"></script>
+    <!-- waypoints -->
+    <script src="/FrontEndDesign/js/jquery.waypoints.min.js"></script>
+    <!-- carousel -->
+    <script src="/FrontEndDesign/js/owl.carousel.min.js"></script>
+    <!-- wow js -->
+    <script src="/FrontEndDesign/js/wow.min.js"></script>
+    <!-- particles js -->
+    <script src="/FrontEndDesign/js/particles.min.js"></script>
+    <!-- app js -->
+    <script src="/FrontEndDesign/js/app.js"></script>
+    <!-- countdown JS -->
+    <script src="/FrontEndDesign/js/countdown.js"></script>
+    <!-- jquery.plate JS -->
+    <script src="/FrontEndDesign/js/jquery.plate.js"></script>
+    <!-- jarallax JS -->
+    <script src="/FrontEndDesign/js/jarallax.min.js"></script>
+    <!-- jquery scrollUp  JS -->
+    <script src="/FrontEndDesign/js/jquery.scrollUp.min.js"></script>
+
+    <!-- Map API Key -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPyH6cdvHbPfyzC-ygZydj_KOBc6MoDhg&amp;callback=initMap"
+            type="text/javascript"></script>
+    <script src="/FrontEndDesign/js/map.js"></script>
+    <!-- Main Custom JS -->
+    <script src="/FrontEndDesign/js/custom.js"></script>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

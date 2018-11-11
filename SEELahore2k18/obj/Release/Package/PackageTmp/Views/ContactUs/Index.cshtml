@@ -1,0 +1,359 @@
+﻿@model IEnumerable<SEELahore2k18.Models.ContactU>
+
+@{
+    ViewBag.Title = "Index";
+    int totalCount = Model.Count();
+}
+
+
+<h2>Contact Us <button class="btn btn-success pull-right" data-toggle="modal" data-target="#BulkEmailModel" onclick="BulkEmail()">Bulk Email</button></h2>
+
+<div id="BulkEmailModel" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Send Email</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                @*<div class="row">
+                        <div class="col-md-12">
+                            <label for="BulkEmailName" class="pull-left">Name: </label><input type="text" value="" id="BulkEmailName" class="form-control" />
+                        </div>
+                    </div><br />*@
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="BulkEmailTo" class="pull-left">Emails: </label> <textarea value="" id="BulkEmailTo" class="form-control" disabled></textarea>
+                    </div>
+                </div><br />
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="BulkEmailSubject" class="pull-left">Subject: </label> <input type="text" value="SEE Lahore" id="BulkEmailSubject" class="form-control" />
+                    </div>
+                </div><br />
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="BulkEmailName" class="pull-left">Message: </label>
+                        <textarea id="BulkEmailBody" class="form-control" style="height:115px!important">
+                            Congratulations you have been selected for Ambassadorship of SEE lahore 2k18.
+                        </textarea>
+                    </div>
+                </div><br />
+
+            </div>
+
+            <div class="modal-footer">
+                <img src="/assets/ajax-loader.gif" id="Bulkloading-indicator" style="display:none" />
+                <button type="button" class="btn emailFormButton btn-info" onclick="SendBulkSMS()">SMS</button>
+                <button type="button" class="btn emailFormButton btn-success" onclick="SendBulkEmail(1)">Email</button>
+                <button type="button" class="btn emailFormButton btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<table class="table table-striped" style="text-align:center;border:double" border="1">
+    <tr>
+        <th>
+            <input type="checkbox" id="SelectAll" onclick="selectAll()" name="selectAll" />
+        </th>
+        <th>
+            Sr. No.
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.Opened == false)
+        {
+
+            totalCount--;
+            <tr>
+                <td>
+                    <input type="checkbox" id="Select_@item.Id" value="@item.Email" name="selectedItem" />
+                </td>
+                <td>
+                    @totalCount
+
+                    <div id="emailModel_@totalCount" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Send Email</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="EmailName" class="pull-left">Name: </label><input type="text" value="@item.Name" id="EmailName_@item.Id" class="form-control" />
+                                        </div>
+                                    </div><br />
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="EmailPhone" class="pull-left">Phone No: </label><input type="text" value="@item.ContactNo" id="EmailPhone_@item.Id" class="form-control" disabled />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="EmailName" class="pull-left">Email: </label> <input type="text" value="@item.Email" id="EmailTo_@item.Id" class="form-control" disabled />
+                                        </div>
+                                    </div><br />
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="EmailName" class="pull-left">Subject: </label> <input type="text" value="SEE Lahore" id="EmailSubject_@item.Id" class="form-control" />
+                                        </div>
+                                    </div><br />
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="EmailName" class="pull-left">Message: </label>
+                                            <textarea id="EmailBody_@item.Id" class="form-control" style="height:115px!important">Dear @item.Name!
+Thankyou for your concerns.
+                                            </textarea>
+                                        </div>
+                                    </div><br />
+
+                                </div>
+                                <div class="modal-footer">
+                                    <img src="/assets/ajax-loader.gif" id="loading-indicator_@item.Id" style="display:none" />
+                                    <button type="button" class="btn emailFormButton btn-info" onclick="SendSMS(@item.Id)">SMS</button>
+                                    <button type="button" class="btn emailFormButton btn-success" onclick="SendEmail(@item.Id)">Email</button>
+                                    <button type="button" class="btn emailFormButton btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <a style="color:blue!important;" href="/ContactUs/Details/@item.Id"> @Html.DisplayFor(modelItem => item.Name)</a>
+                </td>
+                <td>
+                    <a style="color:blue!important" href="/ContactUs/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.ContactNo)
+                    </a>
+                </td>
+                <td>
+                    <a style="color:blue!important" href="/ContactUs/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </a>
+                </td>
+                <td>
+                    <a style="color:blue!important" href="/ContactUs/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.Subject)
+                    </a>
+                </td>
+                <td>
+                    <a style="color:blue!important" href="/ContactUs/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </a>
+                </td>
+                <td>
+                    <a style="color:blue!important" href="/ContactUs/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.CreatedAt)
+                    </a>
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-sm btn-danger" })
+                    <button type="button" class="btn emailFormButton btn-info btn-sm" data-toggle="modal" data-target="#emailModel_@totalCount" style="width:90px!important; height:30px!important">Contact</button>
+                </td>
+            </tr>
+        }
+        else
+        {
+            totalCount--;
+            <tr>
+                <td>
+                    <input type="checkbox" id="Select_@item.Id" value="@item.Email" name="selectedItem" />
+                </td>
+                <td>
+                    @totalCount
+
+                    <div id="emailModel_@totalCount" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Send Email</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="EmailName" class="pull-left">Name: </label><input type="text" value="@item.Name" id="EmailName_@item.Id" class="form-control" />
+                                        </div>
+                                    </div><br />
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="EmailPhone" class="pull-left">Phone No: </label><input type="text" value="@item.ContactNo" id="EmailPhone_@item.Id" class="form-control" disabled />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="EmailName" class="pull-left">Email: </label> <input type="text" value="@item.Email" id="EmailTo_@item.Id" class="form-control" disabled />
+                                        </div>
+                                    </div><br />
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="EmailName" class="pull-left">Subject: </label> <input type="text" value="SEE Lahore" id="EmailSubject_@item.Id" class="form-control" />
+                                        </div>
+                                    </div><br />
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="EmailName" class="pull-left">Message: </label>
+                                            <textarea id="EmailBody_@item.Id" class="form-control" style="height:115px!important">Dear @item.Name!
+Thankyou for your concerns. 
+                                            </textarea>
+                                        </div>
+                                    </div><br />
+
+                                </div>
+                                <div class="modal-footer">
+                                    <img src="/assets/ajax-loader.gif" id="loading-indicator_@item.Id" style="display:none" />
+                                    <button type="button" class="btn emailFormButton btn-info " onclick="SendSMS(@item.Id)">SMS</button>
+                                    <button type="button" class="btn emailFormButton btn-success " onclick="SendEmail(@item.Id)">Email</button>
+                                    <button type="button" class="btn emailFormButton btn-default " data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <a href="/ContactUs/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </a>
+                </td>
+                <td>
+                    <a href="/ContactUs/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.ContactNo)
+                    </a>
+                </td>
+                <td>
+                    <a href="/ContactUs/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </a>
+                </td>
+                <td>
+                    <a href="/ContactUs/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.Subject)
+                    </a>
+                </td>
+                <td>
+                    <a href="/ContactUs/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </a>
+                </td>
+                <td>
+                    <a href="/ContactUs/Details/@item.Id">
+                        @Html.DisplayFor(modelItem => item.CreatedAt)
+                    </a>
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-sm btn-danger", @style = "width:90px!important; height:30px!important" })
+                    <button type="button" class="btn emailFormButton btn-info btn-sm" data-toggle="modal" data-target="#emailModel_@totalCount" style="width:90px!important; height:30px!important">Contact</button>
+                </td>
+            </tr>
+        }
+
+
+    }
+
+</table>
+
+<script>
+    function selectAll() {
+        var checkResult = $("#SelectAll").prop("checked");
+        if (checkResult) {
+            $("input[type='checkbox']").prop('checked', true);
+        }
+        else {
+            $("input[type='checkbox']").prop('checked', false);
+        }
+    }
+
+    function SendSMS(id)
+    {
+        alert("SMS service is not integrated yet.");
+    }
+
+    function SendEmail(id)
+    {
+        $('#loading-indicator_' + id).show();
+        $(".emailFormButton").attr("disabled", true);
+        $.ajax({
+            url: "/Email/SendEmail",
+            type: 'POST',
+            data: { EmailSubject: $('#EmailSubject_' + id).val(), EmailBody: $('#EmailBody_' + id).val(), EmailTo: $('#EmailTo_' + id).val(), EmailName: $('#EmailName_' + id).val() },
+            success: function (result) {
+                $('#loading-indicator_' + id).hide();
+                $(".emailFormButton").attr("disabled", false);
+                alert(result);
+            },
+            error: function () {
+                $('#loading-indicator_' + id).hide();
+                $(".emailFormButton").attr("disabled", false);
+                alert("error");
+            }
+        });
+    }
+
+
+    function BulkEmail() {
+        debugger;
+        var emailsList = [];
+        $.each($("input[name='selectedItem']:checked"), function () {
+            emailsList.push($(this).val());
+        });
+        $("#BulkEmailTo").val(emailsList.join(", "));
+    }
+
+    function SendBulkEmail(dummyparam) {
+        debugger;
+        var emailTo = $("#BulkEmailTo").val();
+        var subject = $("#BulkEmailSubject").val();
+        var body = $("#BulkEmailBody").val();
+
+        //$('#loading-indicator_' + id).show();
+        $(".emailFormButton").attr("disabled", true);
+        $.ajax({
+            url: "/Email/SendBulkEmail",
+            type: 'POST',
+            data: { EmailSubject: subject, EmailBody: body, EmailTo: emailTo },
+            success: function (result) {
+                //$('#loading-indicator_' + id).hide();
+                $(".emailFormButton").attr("disabled", false);
+                alert(result);
+            },
+            error: function () {
+                //$('#loading-indicator_' + id).hide();
+                $(".emailFormButton").attr("disabled", false);
+                alert("error");
+            }
+        });
+
+    }
+
+</script>
