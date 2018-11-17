@@ -285,3 +285,4 @@ C:\Users\saqib\Source\Repos\SEE-Lahore-V2-10-nov-\SEELahore2k18\bin\EntityFramew
 C:\Users\saqib\Source\Repos\SEE-Lahore-V2-10-nov-\SEELahore2k18\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\saqib\Source\Repos\SEE-Lahore-V2-10-nov-\SEELahore2k18\obj\Debug\SEELahore2k18.dll
 C:\Users\saqib\Source\Repos\SEE-Lahore-V2-10-nov-\SEELahore2k18\obj\Debug\SEELahore2k18.pdb
+C:\Users\saqib\Source\Repos\SEE-Lahore-V2-10-nov-\SEELahore2k18\obj\Debug\SEELahore2k18.csprojResolveAssemblyReference.cache
