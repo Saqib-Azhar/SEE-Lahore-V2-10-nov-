@@ -283,6 +283,5 @@ C:\Users\saqib\Source\Repos\SEE-Lahore-V2-10-nov-\SEELahore2k18\bin\System.Web.O
 C:\Users\saqib\Source\Repos\SEE-Lahore-V2-10-nov-\SEELahore2k18\bin\EntityFramework.xml
 C:\Users\saqib\Source\Repos\SEE-Lahore-V2-10-nov-\SEELahore2k18\bin\EntityFramework.SqlServer.xml
 C:\Users\saqib\Source\Repos\SEE-Lahore-V2-10-nov-\SEELahore2k18\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\saqib\Source\Repos\SEE-Lahore-V2-10-nov-\SEELahore2k18\obj\Debug\SEELahore2k18.csprojResolveAssemblyReference.cache
 C:\Users\saqib\Source\Repos\SEE-Lahore-V2-10-nov-\SEELahore2k18\obj\Debug\SEELahore2k18.dll
 C:\Users\saqib\Source\Repos\SEE-Lahore-V2-10-nov-\SEELahore2k18\obj\Debug\SEELahore2k18.pdb

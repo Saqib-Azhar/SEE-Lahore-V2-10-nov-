@@ -32,7 +32,7 @@ namespace SEELahore2k18.Controllers
                     if (item == "" || item == " " || item == null)
                         continue;
                     var result = SendSMS(item, Subject, Message);
-                    Results.Add(item + ": " + result.Data.ToString() + "\n\n");
+                    Results.Add(result.Data.ToString() + "\n\n");
                 }
             }
             catch (Exception ex)
@@ -52,7 +52,14 @@ namespace SEELahore2k18.Controllers
             try
             {
                 SMSReceiverNumber = System.Text.RegularExpressions.Regex.Replace(SMSReceiverNumber, "[^\\w\\._]", "");
-                SMSReceiverNumber = "92" + SMSReceiverNumber.Substring(2, SMSReceiverNumber.Length - 2);
+                if(SMSReceiverNumber.StartsWith("0"))
+                {
+                    SMSReceiverNumber = "92" + SMSReceiverNumber.Substring(1, SMSReceiverNumber.Length - 1);
+                }
+                else if (SMSReceiverNumber.StartsWith("+"))
+                {
+                    SMSReceiverNumber = SMSReceiverNumber.Substring(1, SMSReceiverNumber.Length - 1);
+                }
                 string url = SMSApiUrl;
                 String result = "";
                 String message = HttpUtility.UrlEncode(Subject + ":\n" + Message);
@@ -87,7 +94,7 @@ namespace SEELahore2k18.Controllers
                     var b = a[0];
                     var c = b.response;
                     var d = Convert.ToString(c);
-                    return Json(d, JsonRequestBehavior.AllowGet);
+                    return Json(SMSReceiverNumber + ": " + d, JsonRequestBehavior.AllowGet);
                 }
             }
             catch (Exception ex)

@@ -101,6 +101,15 @@ namespace SEELahore2k18.Controllers
                             //ModelState.AddModelError("Error: ", "Your CGPA should be 3.0 atleast.");
                             return View(talentGala);
                         }
+                        
+                        if (Convert.ToDecimal(talentGala.CGPA_Numbers) > 4)
+                        {
+                            ViewBag.ErrorMessage = "Your CGPA can not be more than max.";
+                            ViewBag.InstituteId = new SelectList(db.Institutes, "Id", "Institute1");
+                            ViewBag.RequestStatusId = new SelectList(db.RequestStatus, "Id", "Status", talentGala.RequestStatusId);
+                            //ModelState.AddModelError("Error: ", "Your CGPA should be 3.0 atleast.");
+                            return View(talentGala);
+                        }
                     }
                     else if (Convert.ToDecimal(talentGala.CGPA_Numbers) > Convert.ToDecimal(talentGala.TotalNumbers))
                     {
@@ -110,14 +119,14 @@ namespace SEELahore2k18.Controllers
                         //ModelState.AddModelError("Error: ", "Percentage of your marks should be 80% atleast.");
                         return View(talentGala);
                     }
-                    else if (((Convert.ToDecimal(talentGala.CGPA_Numbers) / Convert.ToDecimal(talentGala.TotalNumbers)) * 100) < 80)
-                    {
-                        ViewBag.ErrorMessage = "Percentage of your marks should be 80% atleast.";
-                        ViewBag.InstituteId = new SelectList(db.Institutes, "Id", "Institute1");
-                        ViewBag.RequestStatusId = new SelectList(db.RequestStatus, "Id", "Status", talentGala.RequestStatusId);
-                        //ModelState.AddModelError("Error: ", "Percentage of your marks should be 80% atleast.");
-                        return View(talentGala);
-                    }
+                    //else if (((Convert.ToDecimal(talentGala.CGPA_Numbers) / Convert.ToDecimal(talentGala.TotalNumbers)) * 100) < 80)
+                    //{
+                    //    ViewBag.ErrorMessage = "Percentage of your marks should be 80% atleast.";
+                    //    ViewBag.InstituteId = new SelectList(db.Institutes, "Id", "Institute1");
+                    //    ViewBag.RequestStatusId = new SelectList(db.RequestStatus, "Id", "Status", talentGala.RequestStatusId);
+                    //    //ModelState.AddModelError("Error: ", "Percentage of your marks should be 80% atleast.");
+                    //    return View(talentGala);
+                    //}
 
                     try
                     {

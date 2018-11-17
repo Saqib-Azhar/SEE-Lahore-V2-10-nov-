@@ -253,3 +253,9 @@
 
 
 
+16-Nov-18 11:28:08 PM | System | at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at SEELahore2k18.Controllers.EmailController.SendEmail(String EmailSubject, String EmailBody, String EmailTo, String EmailName) in C:\Users\saqib\Source\Repos\SEE-Lahore-V2-10-nov-\SEELahore2k18\Controllers\EmailController.cs:line 52 | Failure sending mail.
+
+
+
+
