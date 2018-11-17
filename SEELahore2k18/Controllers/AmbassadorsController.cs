@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using SEELahore2k18.Models;
 using System.Data.Entity.Validation;
+using PagedList;
 
 namespace SEELahore2k18.Controllers
 {
@@ -17,19 +18,39 @@ namespace SEELahore2k18.Controllers
         private SEELahoreEntities db = new SEELahoreEntities();
 
         // GET: Ambassadors
-        public ActionResult Index(int? type = 0)
+        public ActionResult Index(int? type = 0, int? page = 1)
         {
+            int pageSize = 10;
+            int pageIndex = 1;
+            pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
+            IPagedList<Ambassador> ambassadors = null;
             if (type != 0)
             {
                 ViewBag.InstituteId = new SelectList(db.Institutes, "Id", "Institute1");
-                var ambassadors = db.Ambassadors.Where(s => s.StatusId == type).Include(a => a.AmbassadorCategory).OrderByDescending(s => s.Id).Include(a => a.RequestStatu);
-                return View(ambassadors.ToList());
+                ambassadors = db.Ambassadors.Where(s => s.StatusId == type).Include(a => a.AmbassadorCategory).OrderByDescending(s => s.Id).Include(a => a.RequestStatu).ToPagedList(pageIndex, pageSize);
+                if(page == 1)
+                {
+                    ViewBag.startingCounter =  ambassadors.Count;
+                }
+                else
+                {
+                    ViewBag.startingCounter = (pageSize * pageIndex) + ambassadors.Count;
+                }
+                return View(ambassadors);
             }
             else
             {
                 ViewBag.InstituteId = new SelectList(db.Institutes, "Id", "Institute1");
-                var ambassadors = db.Ambassadors.Include(a => a.AmbassadorCategory).OrderByDescending(s => s.Id).Include(a => a.RequestStatu);
-                return View(ambassadors.ToList());
+                ambassadors = db.Ambassadors.Include(a => a.AmbassadorCategory).OrderByDescending(s => s.Id).Include(a => a.RequestStatu).ToPagedList(pageIndex, pageSize);
+                if (page == 1)
+                {
+                    ViewBag.startingCounter = ambassadors.Count;
+                }
+                else
+                {
+                    ViewBag.startingCounter = (pageSize * pageIndex) + ambassadors.Count;
+                }
+                return View(ambassadors);
             }
         }
 

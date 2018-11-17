@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using SEELahore2k18.Models;
 using System.Data.Entity.Validation;
+using PagedList;
 
 namespace SEELahore2k18.Controllers
 {
@@ -17,20 +18,33 @@ namespace SEELahore2k18.Controllers
         private SEELahoreEntities db = new SEELahoreEntities();
 
         // GET: CompetitionRegistrations
-        public ActionResult Index(int? type = 0)
+        public ActionResult Index(int? type = 0, int? page = 1)
         {
+            int pageSize = 10;
+            int pageIndex = 1;
+            pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
+            IPagedList<CompetitionRegistration> competitionRegistrations = null;
             if (type != 0)
             {
             ViewBag.InstituteId = new SelectList(db.Institutes, "Id", "Institute1");
-                var competitionRegistrations = db.CompetitionRegistrations.OrderByDescending(s => s.Id).Where(s => s.RequestStatusId == type).Include(c => c.Competition).Include(c => c.RequestStatu);
-                return View(competitionRegistrations.ToList());
+                competitionRegistrations = db.CompetitionRegistrations.OrderByDescending(s => s.Id).Where(s => s.RequestStatusId == type).Include(c => c.Competition).Include(c => c.RequestStatu).ToPagedList(pageIndex, pageSize);
+
             }
             else
             {
             ViewBag.InstituteId = new SelectList(db.Institutes, "Id", "Institute1");
-                var competitionRegistrations = db.CompetitionRegistrations.OrderByDescending(s => s.Id).Include(c => c.Competition).Include(c => c.RequestStatu);
-                return View(competitionRegistrations.ToList());
+                competitionRegistrations = db.CompetitionRegistrations.OrderByDescending(s => s.Id).Include(c => c.Competition).Include(c => c.RequestStatu).ToPagedList(pageIndex, pageSize);
+
             }
+            if (page == 1)
+            {
+                ViewBag.startingCounter = competitionRegistrations.Count;
+            }
+            else
+            {
+                ViewBag.startingCounter = (pageSize * pageIndex) + competitionRegistrations.Count;
+            }
+            return View(competitionRegistrations);
         }
 
         // GET: CompetitionRegistrations/Details/5

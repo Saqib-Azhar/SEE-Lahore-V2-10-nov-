@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using SEELahore2k18.Models;
 using System.Data.Entity.Validation;
+using PagedList;
 
 namespace SEELahore2k18.Controllers
 {
@@ -17,20 +18,33 @@ namespace SEELahore2k18.Controllers
         private SEELahoreEntities db = new SEELahoreEntities();
 
         // GET: Volunteers
-        public ActionResult Index(int? type = 0)
+        public ActionResult Index(int? type = 0, int? page = 1)
         {
+            int pageSize = 10;
+            int pageIndex = 1;
+            pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
+            IPagedList<Volunteer> volunteers = null;
             if (type != 0)
             {
             ViewBag.InstituteId = new SelectList(db.Institutes, "Id", "Institute1");
-                var volunteers = db.Volunteers.Where(s=>s.StatusId == type).Include(v => v.RequestStatu).OrderByDescending(s => s.Id).Include(v => v.VolunteerCategory);
-                return View(volunteers.ToList());
+                volunteers = db.Volunteers.Where(s=>s.StatusId == type).Include(v => v.RequestStatu).OrderByDescending(s => s.Id).Include(v => v.VolunteerCategory).ToPagedList(pageIndex, pageSize);
+
             }
             else
             {
             ViewBag.InstituteId = new SelectList(db.Institutes, "Id", "Institute1");
-                var volunteers = db.Volunteers.Include(v => v.RequestStatu).OrderByDescending(s => s.Id).Include(v => v.VolunteerCategory);
-                return View(volunteers.ToList());
+                volunteers = db.Volunteers.Include(v => v.RequestStatu).OrderByDescending(s => s.Id).Include(v => v.VolunteerCategory).ToPagedList(pageIndex, pageSize);
+
             }
+            if (page == 1)
+            {
+                ViewBag.startingCounter = volunteers.Count;
+            }
+            else
+            {
+                ViewBag.startingCounter = (pageSize * pageIndex) + volunteers.Count;
+            }
+            return View(volunteers);
         }
 
         // GET: Volunteers/Details/5

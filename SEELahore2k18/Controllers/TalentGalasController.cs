@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using SEELahore2k18.Models;
 using System.Data.Entity.Validation;
+using PagedList;
 
 namespace SEELahore2k18.Controllers
 {
@@ -17,20 +18,31 @@ namespace SEELahore2k18.Controllers
         private SEELahoreEntities db = new SEELahoreEntities();
 
         // GET: TalentGalas
-        public ActionResult Index(int? type = 0)
+        public ActionResult Index(int? type = 0, int? page = 1)
         {
+            int pageSize = 10;
+            int pageIndex = 1;
+            pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
+            IPagedList<TalentGala> talentGalas = null;
             if (type != 0)
             {
                 ViewBag.InstituteId = new SelectList(db.Institutes, "Id", "Institute1");
-                var talentGalas = db.TalentGalas.Where(s=>s.RequestStatusId == type).OrderByDescending(s => s.Id).Include(t => t.RequestStatu);
-                return View(talentGalas.ToList());
+                talentGalas = db.TalentGalas.Where(s=>s.RequestStatusId == type).OrderByDescending(s => s.Id).Include(t => t.RequestStatu).ToPagedList(pageIndex, pageSize);
             }
             else
             {
                 ViewBag.InstituteId = new SelectList(db.Institutes, "Id", "Institute1");
-                var talentGalas = db.TalentGalas.OrderByDescending(s => s.Id).Include(t => t.RequestStatu);
-                return View(talentGalas.ToList());
+                talentGalas = db.TalentGalas.OrderByDescending(s => s.Id).Include(t => t.RequestStatu).ToPagedList(pageIndex, pageSize);
             }
+            if (page == 1)
+            {
+                ViewBag.startingCounter = talentGalas.Count;
+            }
+            else
+            {
+                ViewBag.startingCounter = (pageSize * pageIndex) + talentGalas.Count;
+            }
+            return View(talentGalas);
         }
 
         // GET: TalentGalas/Details/5

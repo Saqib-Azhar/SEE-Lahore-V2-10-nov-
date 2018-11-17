@@ -1,11 +1,23 @@
-﻿@model IEnumerable<SEELahore2k18.Models.Volunteer>
+﻿@*@model IEnumerable<SEELahore2k18.Models.Volunteer>*@
+@model PagedList.IPagedList<SEELahore2k18.Models.Volunteer>
+@using PagedList.Mvc;
+
+
 
 @{
     ViewBag.Title = "Index";
-    int totalCount = Model.Count();
+    var startingItem = Convert.ToInt32(ViewBag.startingCounter);
+    int totalCount = startingItem;// Model.Count();
 }
 
-<h2>Volunteer Requests<button class="btn btn-success pull-right" data-toggle="modal" data-target="#BulkEmailModel" onclick="BulkEmail()">Bulk Email</button></h2>
+<style>
+    .classCenter {
+        text-align: center;
+        font-size: xx-large;
+        padding-left: 10px;
+    }
+</style>
+<h2>Volunteer Requests<button class="btn btn-success pull-right" data-toggle="modal" data-target="#BulkEmailModel" onclick="BulkEmail()">Bulk Contact</button></h2>
 
 <div id="BulkEmailModel" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -17,14 +29,12 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                @*<div class="row">
-                        <div class="col-md-12">
-                            <label for="BulkEmailName" class="pull-left">Name: </label><input type="text" value="" id="BulkEmailName" class="form-control" />
-                        </div>
-                    </div><br />*@
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <label for="BulkEmailTo" class="pull-left">Emails: </label> <textarea value="" id="BulkEmailTo" class="form-control" disabled></textarea>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="BulkSMSTo" class="pull-left">Phone Numbers: </label> <textarea value="" id="BulkSMSTo" class="form-control" disabled></textarea>
                     </div>
                 </div><br />
                 <div class="row">
@@ -78,6 +88,9 @@
             @Html.DisplayName("City")
         </th>
         <th>
+            @Html.DisplayName("Phone")
+        </th>
+        <th>
             @Html.DisplayName("Request Status")
         </th>
         <th>
@@ -92,7 +105,7 @@
     totalCount--;
     <tr>
         <td>
-            <input type="checkbox" id="Select_@item.Id" value="@item.EmailId" name="selectedItem" />
+            <input type="checkbox" id="Select_@item.Id" alt="@item.ContactNo" value="@item.EmailId" name="selectedItem" />
         </td>
         <td>
             @totalCount
@@ -159,6 +172,9 @@ Congratulations you have been selected SEE lahore 2k18 as a Volunteer.
             @Html.DisplayFor(modelItem => item.CityOfResidence)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.ContactNo)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.RequestStatu.Status)
         </td>
         <td>
@@ -180,26 +196,57 @@ Congratulations you have been selected SEE lahore 2k18 as a Volunteer.
 </table>
 
 
+<br />
+<div id='Paging' style="text-align:center">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+    of @Model.PageCount
+    <div class="col-md-12" style="text-align:center">
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-4" style="padding-left:70px;font-size:xx-large">
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }),
+                new PagedListRenderOptions()
+                {
+                    LiElementClasses = new List<string> { "pull-center" }
+                })
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script>
     function selectAll() {
-    var checkResult = $("#SelectAll").prop("checked");
-    if (checkResult) {
-        $("input[type='checkbox']").prop('checked', true);
-    }
-    else {
-        $("input[type='checkbox']").prop('checked', false);
-    }
-}
-
-    
-    function SendSMS(id)
-    {
-        alert("SMS service is not integrated yet.");
+        var checkResult = $("#SelectAll").prop("checked");
+        if (checkResult) {
+            $("input[type='checkbox']").prop('checked', true);
+        }
+        else {
+            $("input[type='checkbox']").prop('checked', false);
+        }
     }
 
-    function SendEmail(id)
-    {
+    function SendSMS(id) {
+        $('#loading-indicator_' + id).show();
+        $(".emailFormButton").attr("disabled", true);
+        $.ajax({
+            url: "/SMS/SendSMS",
+            type: 'POST',
+            data: { SMSReceiverNumber: $('#EmailPhone_' + id).val(), Subject: $('#EmailSubject_' + id).val(), Message: $('#EmailBody_' + id).val() },
+            success: function (result) {
+                $('#loading-indicator_' + id).hide();
+                $(".emailFormButton").attr("disabled", false);
+                alert(result);
+            },
+            error: function () {
+                $('#loading-indicator_' + id).hide();
+                $(".emailFormButton").attr("disabled", false);
+                alert("error");
+            }
+        });
+    }
+
+    function SendEmail(id) {
         $('#loading-indicator_' + id).show();
         $(".emailFormButton").attr("disabled", true);
         $.ajax({
@@ -220,16 +267,19 @@ Congratulations you have been selected SEE lahore 2k18 as a Volunteer.
     }
 
     function BulkEmail() {
-        debugger;
         var emailsList = [];
         $.each($("input[name='selectedItem']:checked"), function () {
             emailsList.push($(this).val());
         });
         $("#BulkEmailTo").val(emailsList.join(", "));
+        var numbersList = [];
+        $.each($("input[name='selectedItem']:checked"), function () {
+            numbersList.push($(this).attr("alt"));
+        });
+        $("#BulkSMSTo").val(numbersList.join(", "));
     }
 
     function SendBulkEmail(dummyparam) {
-        debugger;
         var emailTo = $("#BulkEmailTo").val();
         var subject = $("#BulkEmailSubject").val();
         var body = $("#BulkEmailBody").val();
@@ -252,6 +302,33 @@ Congratulations you have been selected SEE lahore 2k18 as a Volunteer.
             }
         });
 
+    }
+
+
+
+    function SendBulkSMS()
+    {
+        var smsTo = $("#BulkSMSTo").val();
+        var subject = $("#BulkEmailSubject").val();
+        var body = $("#BulkEmailBody").val();
+
+        //$('#loading-indicator_' + id).show();
+        $(".emailFormButton").attr("disabled", true);
+        $.ajax({
+            url: "/SMS/SendBulkSMS",
+            type: 'POST',
+            data: { SMSReceiverNumbers: smsTo, Subject: subject, Message: body },
+            success: function (result) {
+                //$('#loading-indicator_' + id).hide();
+                $(".emailFormButton").attr("disabled", false);
+                alert(result);
+            },
+            error: function () {
+                //$('#loading-indicator_' + id).hide();
+                $(".emailFormButton").attr("disabled", false);
+                alert("error");
+            }
+        });
     }
 
 </script>

@@ -1,12 +1,22 @@
-﻿@model IEnumerable<SEELahore2k18.Models.Ambassador>
+﻿@model PagedList.IPagedList<SEELahore2k18.Models.Ambassador>
+@using PagedList.Mvc;
+
+ 
 
 @{
     ViewBag.Title = "Index";
-    int totalCount = Model.Count();
+    var startingItem = Convert.ToInt32(ViewBag.startingCounter);
+    int totalCount = startingItem;// Model.Count();
 }
 
-
-<h2>Ambassadors Requests <button class="btn btn-success pull-right" data-toggle="modal" data-target="#BulkEmailModel"  onclick="BulkEmail()">Bulk Contact</button></h2>
+<style>
+    .classCenter {
+        text-align: center;
+        font-size: xx-large;
+        padding-left: 10px;
+    }
+</style>
+<h2>Ambassadors Requests <button class="btn btn-success pull-right " data-toggle="modal" data-target="#BulkEmailModel"  onclick="BulkEmail()">Bulk Contact</button></h2>
 
 
 
@@ -182,7 +192,23 @@
     }
 
 </table>
-
+<br />
+<div id='Paging' style="text-align:center">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+    of @Model.PageCount
+    <div class="col-md-12" style="text-align:center">
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-4" style="padding-left:70px;font-size:xx-large">
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }),
+                new PagedListRenderOptions()
+                {
+                    LiElementClasses = new List<string> { "pull-center" }
+                })  
+            </div>
+        </div>
+    </div>
+</div>
 
 <script>
     function selectAll() {

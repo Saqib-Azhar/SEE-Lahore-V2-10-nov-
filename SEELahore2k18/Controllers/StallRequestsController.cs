@@ -10,6 +10,7 @@ using SEELahore2k18.Models;
 using System.IO;
 using Microsoft.AspNet.Identity;
 using System.Data.Entity.Validation;
+using PagedList;
 
 namespace SEELahore2k18.Controllers
 {
@@ -19,20 +20,34 @@ namespace SEELahore2k18.Controllers
         private SEELahoreEntities db = new SEELahoreEntities();
 
         // GET: StallRequests
-        public ActionResult Index(int? type = 0)
+        public ActionResult Index(int? type = 0, int? page = 1)
         {
+            int pageSize = 10;
+            int pageIndex = 1;
+            pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
+            IPagedList<StallRequest> stallRequests = null;
             if (type != 0)
             {
             ViewBag.InstituteId = new SelectList(db.Institutes, "Id", "Institute1");
-                var stallRequests = db.StallRequests.Where(s => s.RequestStatusId == type).OrderByDescending(s => s.Id).Include(s => s.AspNetUser).Include(s => s.RequestStatu).Include(s => s.StallCategory);
-                return View(stallRequests.ToList());
+                stallRequests = db.StallRequests.Where(s => s.RequestStatusId == type).OrderByDescending(s => s.Id).Include(s => s.AspNetUser).Include(s => s.RequestStatu).Include(s => s.StallCategory).ToPagedList(pageIndex, pageSize);
+                
             }
             else
             {
             ViewBag.InstituteId = new SelectList(db.Institutes, "Id", "Institute1");
-                var stallRequests = db.StallRequests.Include(s => s.AspNetUser).OrderByDescending(s => s.Id).Include(s => s.RequestStatu).Include(s => s.StallCategory);
-                return View(stallRequests.ToList());
+                stallRequests = db.StallRequests.Include(s => s.AspNetUser).OrderByDescending(s => s.Id).Include(s => s.RequestStatu).Include(s => s.StallCategory).ToPagedList(pageIndex, pageSize);
+                
             }
+
+            if (page == 1)
+            {
+                ViewBag.startingCounter = stallRequests.Count;
+            }
+            else
+            {
+                ViewBag.startingCounter = (pageSize * pageIndex) + stallRequests.Count;
+            }
+            return View(stallRequests);
         }
 
         // GET: StallRequests/Details/5
