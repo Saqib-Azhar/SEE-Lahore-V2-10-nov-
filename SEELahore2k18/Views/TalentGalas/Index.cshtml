@@ -12,9 +12,9 @@
 
 <style>
     .classCenter {
-        text-align: center;
-        font-size: xx-large;
-        padding-left: 10px;
+        padding: 2px;
+        border-color: purple;
+        border: solid;
     }
 </style>
 
@@ -199,14 +199,15 @@ Congratulations you have been selected for Talent Gala competition of SEE lahore
     of @Model.PageCount
     <div class="col-md-12" style="text-align:center">
         <div class="row">
-            <div class="col-md-5"></div>
-            <div class="col-md-4" style="padding-left:70px;font-size:xx-large">
+            <div class="col-md-4"></div>
+            <div class="col-md-4" style="font-size:x-large">
                 @Html.PagedListPager(Model, page => Url.Action("Index", new { page }),
                 new PagedListRenderOptions()
                 {
-                    LiElementClasses = new List<string> { "pull-center" }
+                    LiElementClasses = new List<string> { "classCenter" }
                 })
             </div>
+            <div class="col-md-4"></div>
         </div>
     </div>
 </div>

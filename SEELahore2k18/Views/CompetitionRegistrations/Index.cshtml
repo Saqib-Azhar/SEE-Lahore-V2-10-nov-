@@ -10,14 +10,14 @@
     int totalCount = startingItem;// Model.Count();
 }
 
+
 <style>
     .classCenter {
-        text-align: center;
-        font-size:xx-large;
-        padding-left:10px;
+        padding: 2px;
+        border-color: blueviolet;
+        border: solid;
     }
 </style>
-
 <h2>Competition Registrations<button class="btn btn-success pull-right" data-toggle="modal" data-target="#BulkEmailModel" onclick="BulkEmail()">Bulk Contact</button></h2>
 
 <div id="BulkEmailModel" class="modal fade" role="dialog">
@@ -219,12 +219,12 @@ Congratulations your participation request for competition in SEE lahore 2k18 is
     of @Model.PageCount
     <div class="col-md-12" style="text-align:center">
         <div class="row">
-            <div class="col-md-5"></div>
-            <div class="col-md-4" style="padding-left:70px;font-size:xx-large">
+            <div class="col-md-4"></div>
+            <div class="col-md-4" style="font-size:x-large">
                 @Html.PagedListPager(Model, page => Url.Action("Index", new { page }),
                 new PagedListRenderOptions()
                 {
-                    LiElementClasses = new List<string> { "pull-center" }
+                    LiElementClasses = new List<string> { "classCenter" }
                 })
             </div>
         </div>
